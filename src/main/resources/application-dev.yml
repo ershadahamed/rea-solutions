@@ -15,14 +15,13 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   mail:
-    host: localhost
-    port: 1025
-    username: admin
-    password: admin
+    host: smtp.hostinger.com
+    port: 587
+    username:
+    password:
     properties:
       mail:
         smtp:
-          trust: "*"
           auth: true
           starttls:
             enable: true
