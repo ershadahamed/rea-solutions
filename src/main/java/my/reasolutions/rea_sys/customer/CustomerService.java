@@ -68,9 +68,6 @@ public class CustomerService {
         if(StringUtils.isNotBlank(request.phone())){
             customer.setPhone(request.phone());
         }
-        if(request.address() != null){
-            customer.setAddress(request.address());
-        }
     }
 
     public void deleteCustomer(Long customerId) {

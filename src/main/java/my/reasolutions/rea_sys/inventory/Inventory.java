@@ -5,12 +5,12 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import my.reasolutions.rea_sys.address.Address;
 import my.reasolutions.rea_sys.common.BaseEntity;
-import my.reasolutions.rea_sys.customer.Customer;
 import my.reasolutions.rea_sys.inventory.db.DBSystem;
 import my.reasolutions.rea_sys.inventory.earthing.Earthing;
 import my.reasolutions.rea_sys.inventory.tnb.MeterTNB;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
@@ -38,14 +38,16 @@ public class Inventory extends BaseEntity {
     private String summary;
     private String suggestion;
 
-    @Embedded
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "metertnb_id", referencedColumnName = "id", nullable = false)
     private MeterTNB meterTNB;
 
-    @Embedded
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "earthing_id", referencedColumnName = "id", nullable = false)
     private Earthing earthingSystem;
 
-    @Embedded
-    private DBSystem dbSystem;
+    @OneToMany(mappedBy = "inventory")
+    private List<DBSystem> dbSystem;
 
     @ManyToOne
     @JoinColumn(name = "addressId", nullable = false)

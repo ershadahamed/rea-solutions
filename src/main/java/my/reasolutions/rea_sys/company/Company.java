@@ -2,6 +2,7 @@ package my.reasolutions.rea_sys.company;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import my.reasolutions.rea_sys.common.BaseEntity;
 import my.reasolutions.rea_sys.user.User;
 
@@ -11,6 +12,7 @@ import static jakarta.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 @Getter
 @Setter
+@SuperBuilder
 @Builder
 @Entity
 public class Company extends BaseEntity {

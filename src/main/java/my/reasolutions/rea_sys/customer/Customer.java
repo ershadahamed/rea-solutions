@@ -1,25 +1,21 @@
 package my.reasolutions.rea_sys.customer;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import my.reasolutions.rea_sys.address.Address;
 import my.reasolutions.rea_sys.common.BaseEntity;
-import my.reasolutions.rea_sys.inventory.Inventory;
 import my.reasolutions.rea_sys.user.User;
 
 import java.util.List;
 
-import static jakarta.persistence.FetchType.LAZY;
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @AllArgsConstructor
 @Getter
 @Setter
 @SuperBuilder
+@Builder
 @NoArgsConstructor
 @Entity
 public class Customer extends BaseEntity {

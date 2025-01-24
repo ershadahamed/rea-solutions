@@ -2,6 +2,7 @@ package my.reasolutions.rea_sys.address;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import my.reasolutions.rea_sys.common.BaseEntity;
 import my.reasolutions.rea_sys.customer.Customer;
 import my.reasolutions.rea_sys.inventory.Inventory;
@@ -14,6 +15,7 @@ import static jakarta.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 @Getter
 @Setter
+@SuperBuilder
 @Builder
 @Entity
 public class Address extends BaseEntity {
