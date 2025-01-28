@@ -73,4 +73,11 @@ public class CustomerService {
     public void deleteCustomer(Long customerId) {
         customerRepository.deleteById(customerId);
     }
+
+    public Customer getCustomer(Long customerId) {
+        return customerRepository.findById(customerId)
+                .orElseThrow(
+                        () -> new CustomerNotFoundException("Customer not found with id: " + customerId)
+                );
+    }
 }

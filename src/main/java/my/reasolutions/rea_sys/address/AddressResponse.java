@@ -5,7 +5,7 @@ public record AddressResponse(
         String streetOne,
         String streetTwo,
         String city,
-        String state,
+        State state,
         String zip,
         String houseType,
         Long customerId
