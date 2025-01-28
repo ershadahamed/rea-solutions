@@ -35,6 +35,7 @@ public class Inventory extends BaseEntity {
     @Column(updatable = false, nullable = false)
     private Long id;
     private LocalDateTime inspectionDateTime;
+
     private String summary;
     private String suggestion;
 
